@@ -1,0 +1,10 @@
+* {
+    font: normal 16px Monaco;
+}
+body>div {
+    width: 90%;
+    margin: 0 auto;
+}
+input, textarea {
+    width: 100%;
+}

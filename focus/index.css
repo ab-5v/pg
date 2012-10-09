@@ -1,0 +1,34 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+    background-color: #EEE;
+}
+body, input, pre {
+    font: normal 1em monaco;
+}
+
+
+.test-wrapper {
+    margin-left: 300px;
+    padding-left: 20px;
+    background-color: #FFF;
+    min-height: 100%;
+}
+.test-area {
+    padding-top: 30px;
+}
+
+.test-controls {
+    float: left;
+    width: 260px;
+    padding: 30px 20px 0;
+}
+.test-controls div {
+    padding: 3px 5px;
+    background-color: #DDD;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.log {
+}

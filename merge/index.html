@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>merge</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <div class="page">
+        <textarea rows="5" id="foos" placeholder="List of foos"></textarea>
+        <span>Name generator:</span>
+        <input type="text" id="mask" size="4" placeholder="fl"/>
+        <input type="text" id="count" size="4" placeholder="10"/>
+        <input type="button" id="generate" value="Generate"/>
+        <textarea rows="5" id="bars" placeholder="List of bars"></textarea>
+        <textarea rows="1" id="template" placeholder="Template: {foo} <{bar}>"></textarea>
+        <textarea rows="10" id="result"></textarea>
+        <input type="button" value="Merge" id="button"/>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="generator.js" type="text/javascript"></script>
+</body>
+</html>

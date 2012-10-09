@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+</head>
+<body>
+
+    <form target="_blank">
+        <input type="text" name="text" />
+    </form>
+    <script type="text/javascript">
+        document.getElementsByTagName('input')[0].onkeydown = function(e) {
+            e = e || window.event;
+            if (e.keyCode === 13) {
+                document.getElementsByTagName('form')[0].action = '//yandex.ru/yandsearch';
+            }
+        };
+    </script>
+</body>
+</html>

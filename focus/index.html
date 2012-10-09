@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Focus</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="./index.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="test-controls" id="test-controls">
+        <div id="ptest_1">input1.click()</div>
+        <div id="ptest_2">input1.focus()</div>
+        <div id="ptest_3">input1, input2.click()</div>
+        <div id="ptest_4">input1, input2.focus()</div>
+        <div id="ptest_5">disable, input2.focus()</div>
+        <div id="ptest_6">input1.focus(), disable</div>
+        <div id="ptest_7">input1, disable, enable, focus()</div>
+    </div>
+    <div class="test-wrapper">
+        <div class="test-area">
+            <input type="text" name="1"/>
+            <input type="text" name="2"/>
+            <input type="text" name="3"/>
+            <input type="text" name="4" disabled="disabled"/>
+        </div>
+        <div>
+            <span onmousedown="this.parentNode.getElementsByTagName('input')[0].focus()">Click</span>
+            <input type="text"/>
+        </div>
+        <div>
+            <span onclick="this.parentNode.getElementsByTagName('input')[0].focus()">Click</span>
+            <input type="text"/>
+        </div>
+        <div>
+            <span onmouseup="this.parentNode.getElementsByTagName('input')[0].focus()">Click</span>
+            <input type="text"/>
+        </div>
+        <div>
+            <span onmousedown="this.parentNode.getElementsByTagName('input')[0].focus()">Click</span>
+            <input type="text" onblur="this.focus();"/>
+        </div>
+        <div>
+            <span onclick="this.parentNode.getElementsByTagName('input')[0].focus()">Click</span>
+            <input type="text" onblur="this.focus()"/>
+        </div>
+        <div>
+            <span onmouseup="this.parentNode.getElementsByTagName('input')[0].focus()">Click</span>
+            <input type="text" onblur="this.focus()"/>
+        </div>
+        <pre class="log" id="log"></pre>
+    </div>
+</body>
+</html>

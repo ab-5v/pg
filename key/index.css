@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 1em Monaco, monospace;
+}
+
+.wrapper {
+    width: 500px;
+    margin: 20px auto;
+}
+.wrapper div {
+    margin: 20px 0;
+}
+.wrapper div input {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+table td, table th {
+    padding: .2em 0;
+    width: 25%;
+    text-align: right;
+}
+table th {
+    cursor: pointer;
+}

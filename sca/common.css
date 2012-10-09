@@ -1,0 +1,12 @@
+body
+{
+    width: 80%;
+    margin: 20px auto 0;
+}
+
+input,
+textarea
+{
+    width: 100%;
+    font: 15px/20px Monaco, monospace;
+}

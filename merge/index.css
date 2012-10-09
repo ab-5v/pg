@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: normal 1em Verdana;
+}
+textarea, button, input {
+    font: normal 1em Verdana;
+    margin-top: 1em;
+}
+
+.page {
+    width: 80%;
+    margin: 0 auto;
+}
+textarea {
+    width: 100%;
+}
+
