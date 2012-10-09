@@ -1,0 +1,50 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    min-width: 100%;
+    background: #F5F2F0 url('http://dabblet.com/img/noise.png');
+    font-size: 25px;
+    color: #222;
+}
+
+div {
+    height: 100%;
+    width: 100%;
+
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+
+    display: box;
+    box-orient: horizontal;
+    box-pack: center;
+    box-align: center;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+
+td {
+    min-width: 2em;
+    padding: 1em 1em;
+    font: normal 1em Arial;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, .05);
+}
+
+.center {
+    background-color: rgba(255, 0, 0, .02);
+}
