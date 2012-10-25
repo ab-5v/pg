@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+textarea {
+    display: block;
+    width: 98%;
+    height: 98%;
+    margin: 0;
+    padding: 1%;
+
+    border: none;
+    outline: none;
+
+    font: 200 16px/1.4em Monaco, monospace;
+    color: #EFECEA;
+
+    background-color: #333;
+}
