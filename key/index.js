@@ -29,7 +29,7 @@ Array.prototype.indexOf = function(val) {
 
             table.push('</tr>');
         }
-        table.push('</table>');
+        table.push('<tr><td colspan="' + events.length + '"></td></tr></table>');
 
         d.getElementById('log').innerHTML = table.join('');
     }
@@ -37,10 +37,12 @@ Array.prototype.indexOf = function(val) {
     init();
 
     var print = function(e) {
+        var tds = d.getElementsByTagName('td');
         for (var i = 0; i < props.length; i++) {
             var row = d.getElementById(props[i]);
             row.getElementsByTagName('td')[events.indexOf(e.type) + 1].innerHTML = e[props[i]];
         }
+        tds[tds.length-1].innerHTML = e.type + ' ' + Math.random();
     };
 
     var preventers = {};
