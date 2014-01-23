@@ -1,0 +1,109 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>url splitter</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+body, input {
+    font: normal 16px/1.5em 'Source Code Pro', Menlo, monospace;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F6F5F3;
+}
+
+div {
+    width: 800px;
+    margin: 40px auto 0;
+    padding: 25px 20px 20px;
+
+    background: #FFF;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+
+    min-height: 80%;
+}
+
+input {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 2px;
+}
+
+td:nth-child(3n+1) {
+    text-align: right;
+}
+td:nth-child(3n+2) {
+    color: #666;
+}
+
+caption {
+    padding: 0 2px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+}
+</style>
+
+<div class="">
+    <input type="text" class="js-input"/>
+
+    <table class="js-table"></table>
+</div>
+
+<script>
+
+(function(doc){
+    var input = doc.querySelector('.js-input');
+    var table = doc.querySelector('.js-table');
+
+    input.addEventListener('input', function() {
+        var parsed = parseUrl(this.value);
+
+        var html = '<caption>' + parsed.base + '</caption>';
+
+        for (var key in parsed.params) {
+            html += '<tr><td>' + key + '</td><td>=</td><td>' + parsed.params[key] + '</td></tr>';
+        }
+
+        table.innerHTML = html;
+
+    }, false);
+
+    function parseUrl(val) {
+        var split = val.split('?');
+        var base = split.shift();
+        var params = {};
+
+        split.join('?').replace(/;/g, '&').split('&').forEach(function(pair) {
+            pair = pair.split('=');
+            params[pair.shift()] = pair.join('=');
+        });
+
+        return {
+            base: base,
+            params: params
+        };
+    }
+
+})(document);
+
+</script>
+
+
