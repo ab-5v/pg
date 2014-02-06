@@ -33,6 +33,24 @@ var mock = [
         result: 'some <i>panda</i>'
     },
     {
+        text: 'some string',
+        pattern: 'panda',
+        length: 11,
+        result: 'some string'
+    },
+    {
+        text: 'some long string',
+        pattern: 'panda',
+        length: 10,
+        result: 'some long…'
+    },
+    {
+        text: 'some panda string',
+        pattern: 'panda',
+        length: 30,
+        result: 'some <i>panda</i> string'
+    },
+    {
         text: 'some panda',
         pattern: 'panda',
         length: 10,
