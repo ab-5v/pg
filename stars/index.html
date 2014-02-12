@@ -1,0 +1,70 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Stars</title>
+
+<style>
+    body, html { margin: 0; padding: 0; background: #000; color: #BBB; text-align: center; }
+    div { position: absolute; height: 40px; top: 50%; margin-top: -20px; width: 100%; font: 200 40px/40px Helvetica, Arial, sans-serif;}
+</style>
+
+<div id="star"></div>
+
+<script>
+    window.onload = function() {
+        showStar();
+
+        function showStar() {
+            var l = window.stars.length;
+            var i = Math.floor(Math.random() * l);
+            document.getElementById('star').innerText = window.stars[i];
+        };
+    };
+    window.stars = [
+        "acamar","achernar","achird","acrab","acrux","acubens","adhafera","adhara",
+        "ain","akrab","al","aladfar","alamak","alaraph","alathfar","albaldah","albali",
+        "albireo","alchiba","alcor","alcyone","aldebaran","alderamin","aldhafera",
+        "aldhanab","aldhibain","aldib","alfecca","alfirk","algedi","algenib","algethi",
+        "algieba","algol","algorab","alhague","alhajoth","alhena","alioth","alkaid",
+        "alkalurops","alkes","alkurah","almach","alnasl","alnilam","alnitak","alniyat",
+        "alphard","alphecca","alpheratz","alrai","alrakis","alrami","alrischa","alsafi",
+        "alsciaukat","alshain","alshat","altair","altais","altarf","alterf","aludra",
+        "alula","alwaid","alya","alzir","ancha","angetenar","ankaa","anseris","antares",
+        "arcturus","arich","arkab","armus","arneb","arrakis","asad","ascella","asellus",
+        "askella","aspidiske","asterion","asterope","atik","atlas","atria","australis",
+        "auva","avior","awwa","azaleh","azelfafage","azha","azimech","azmidiske","baham",
+        "baten","becrux","beemincitation","beid","bellatrix","benetnasch","betelgeuse",
+        "betria","biham","borealis","botein","brachium","bunda","canopus","capella",
+        "caph","caroli","castor","cebalrai","celaeno","chara","cheleb","chertan","chort",
+        "chow","cor","cursa","cynosure","dabih","decrux","deneb","denebola","dheneb",
+        "diadem","diphda","dnoces","dog","dschubba","dubhe","duhr","dulfim","edasich",
+        "elakrab","elased","electra","elmuthalleth","elnath","elrakis","eltanin","enif",
+        "errai","etamin","fawaris","fomalhaut","fum","furud","gacrux","garnet","gatria",
+        "gemma","gianfar","giedi","gienah","girtab","gomeisa","gorgonea","graffias",
+        "grumium","gurab","hadar","haedus","haldus","hamal","hammel","hassaleh","head",
+        "heka","heze","hoedus","homam","hyadum","hydrobius","hydrus","ii","izar",
+        "jabbah","kabdhilinan","kaffaljidhma","kaitos","kajam","kalb","kaphrah","kastra",
+        "kaus","keid","kentaurus","kitalpha","kochab","kornephoros","kraz","ksoracitation",
+        "kullat","kuma","kurud","kwan","la","lanx","lesath","lucida","maasym","mahasim",
+        "maia","marfark","marfik","markab","matar","mebsuta","media","megrez","meissa",
+        "mekbuda","menchib","menkab","menkalinan","menkar","menkent","menkib","merak",
+        "merga","meridiana","merope","mesarthim","miaplacidus","mimosa","minchir",
+        "minelava","minkar","minliar","mintaka","mira","mirach","miram","mirfak","mirzam",
+        "misam","mizar","mothallah","mufrid","muliphein","muphrid","murzim","muscida",
+        "nair","naos","nash","nashira","navi","nekkar","nembus","nihal","niyat","nunki",
+        "nunu","nusakan","okab","okul","peacock","phact","phad","phecda","phekda",
+        "pherkad","pherkard","pleione","polaris","pollux","porrima","posterior","praecipua",
+        "primus","prior","procyon","propus","pulcherrima","rai","rana","ras","rasalas",
+        "rastaban","regor","regulus","rigel","rigil","rijl","rotanev","rucbah","ruchba",
+        "rukbah","rukbat","sabik","sadachbia","sadalbari","sadalmelik","sadalsuud",
+        "sadatoni","sadr","saif","saiph","salm","samakah","sargas","sarin","sarir",
+        "sceptrum","scheat","schedar","scheddi","schedir","schemali","secundus","segincitation",
+        "seginus","septentrionalis","sham","shaula","sheliak","sheratan","sinistra",
+        "sirius","situla","skat","spica","star","sterope","sualocin","subra","suhail",
+        "sulafat","superba","syrma","tabit","talitha","tania","tarazed","tarazet",
+        "taygetacitation","tegmen","tegmine","tejat","terebellum","tertia","tertius",
+        "thabit","thalimain","thaoum","theemin","thuban","tien","torcularis","tureis",
+        "tyl","unuk","unukalhai","vega","vindemiatrix","wasat","wazn","wezen","yed",
+        "yildun","zaniah","zaurac","zaurak","zavijava","zosma","zubenelakrab","zubenelakribi",
+        "zubenelgenubi","zubenelschemali","zubeneschamali"
+    ];
+</script>
