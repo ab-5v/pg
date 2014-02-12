@@ -29,6 +29,10 @@ html, body {
     overflow-y: auto;
 }
 
+.pre {
+    color: #666;
+}
+
 .pre:empty {
     display: none;
 }

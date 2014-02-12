@@ -46,6 +46,7 @@ function print (json, val, tab) {
 }
 
 function d(val) {
+    return val;
     return '<span class="dummy">' + val + '</span>';
 }
 function s(val) {
