@@ -2,7 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Index</title>
+    <style>
+        .pages {
+            width: 90%;
+            margin: 2% auto;
+        }
+        .page {
+            display: inline-block;
+            position: relative;
+            width: 30%;
+            margin: 2% 1.6%;
+            height: 20%;
+        }
+        .page>a {
+            display: block;
+            text-align: center;
+            font: 200 20px/40px Helvetica, Arial, sans-serif;
+        }
+        .page>iframe {
+            width: 100%;
+            border: none;
+            overflow: hidden;
+        }
+    </style>
 </head>
-<body></body>
+
+<body>
+    <div class="pages" id="pages"></div>
+</body>
+
+<script>
+!function() {
+    var html = '';
+    var pages = [
+        'audio', 'decode', 'dnd', 'focus', 'form', 'highlight', 'input', 'key', 'merge',
+        'mouse', 're', 'redirect', 'sca', 'se', 'set', 'shultz', 'stars', 'tests', 'urlsplit' ];
+
+    pages.forEach(function(page) {
+        html += '<div class="page"><a href="' + page + '/">' + page + '</a><iframe scrolling="no" src="' + page + '/"></iframe></div>';
+    });
+
+    document.querySelector('.pages').innerHTML = html;
+    [].slice.call(document.querySelectorAll('iframe')).forEach(function(iframe) {
+        iframe.onload = function() {
+            try {
+                iframe.contentDocument.querySelector('body').style.zoom = .2;
+            } catch(e) {}
+        };
+    });
+}();
+</script>
 </html>
