@@ -1,11 +1,12 @@
 ;(function(doc) {
 
+var slow = false;
 var pre = doc.querySelector('.pre');
 var textarea = doc.querySelector('.textarea');
 
 textarea.oninput = function() {
+    slow = this.value.length > 2000000;
     pre.innerHTML = print(JSON.parse( this.value ), [], '').join('');
-
 };
 
 function print (json, val, tab) {
@@ -47,13 +48,13 @@ function print (json, val, tab) {
 
 function d(val) {
     return val;
-    return '<span class="dummy">' + val + '</span>';
+    return slow ? val : '<span class="dummy">' + val + '</span>';
 }
 function s(val) {
-    return '<span class="string">' + val + '</span>';
+    return slow ? val : '<span class="string">' + val + '</span>';
 }
 function n(val) {
-    return '<span class="number">' + val + '</span>';
+    return slow ? val : '<span class="number">' + val + '</span>';
 }
 
 textarea.focus();
