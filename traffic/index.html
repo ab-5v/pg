@@ -1,0 +1,86 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Traffic calculator</title>
+
+<style>
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background: #F6F6F6;
+    height: 100%;
+    text-align: center;
+    font: 400 30px/1.5 'Source Code Pro', monospace;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrap {
+    display: inline-block;
+    padding: 20px;
+    background: #FFF;
+    text-align: right;
+}
+label {
+    position: relative;
+}
+span {
+    position: absolute;
+    top: -.09em;
+    right: .5em;
+    color: #666;
+}
+input {
+    width: 4em;
+    padding: 0 2em 0 .5em;
+    font: inherit;
+}
+</style>
+
+<div>
+<div class="wrap">
+    <label><span>KB</span><input type="number" id="size"/></label>
+    <label><span>RPS</span><input type="number" id="rps"/></label>
+    <label><span>TB</span><input type="number" id="traffic" readonly/></label>
+    <label><span>Mb/s</span><input type="number" id="channel" readonly/></label><br/>
+    <div style="height: 20px;"></div>
+    <label><span>TB</span><input type="number" id="included"/></label>
+    <label><span>€/TB</span><input type="number" id="price"/></label>
+    <label><span>€</span><input type="number" id="cost" readonly/></label>
+</div>
+</div>
+
+<script>
+    document.body.addEventListener('input', calc, false);
+
+    function calc() {
+        var rps = document.getElementById('rps');
+        var size = document.getElementById('size');
+        var cost = document.getElementById('cost');
+        var price = document.getElementById('price');
+        var channel = document.getElementById('channel');
+        var traffic = document.getElementById('traffic');
+        var included = document.getElementById('included');
+
+        var trafficRaw = (rps.value || 0) * (size.value || 0) * 60 * 60 * 24 * 30 / (1024 * 1024 * 1024);
+        var trafficRound = Math.round(trafficRaw);
+
+        var channelRaw = (rps.value || 0) * (size.value || 0) * 8 / 1024;
+        var channelRound = Math.round(channelRaw);
+
+        var costRaw = (trafficRaw - (included.value || 0)) * (price.value || 0);
+        var costRound = Math.round(costRaw * 100) / 100;
+        if (costRound < 0) {
+            costRound = 0;
+        }
+
+        channel.value = channelRound;
+        traffic.value = trafficRound;
+        cost.value = costRound;
+    }
+</script>
