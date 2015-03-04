@@ -2,7 +2,7 @@
 
 window.onload = function() {
     var inputs = d.getElementsByTagName('input');
-    var events = ['focus', 'focusin', 'focusout', 'mousedown', 'click', 'mouseup', 'keydown', 'keypress', 'keyup', 'dblclick'];
+    var events = ['focus', 'focusin', 'focusout', 'blur', 'mousedown', 'click', 'mouseup', 'keydown', 'keypress', 'keyup', 'dblclick'];
 
     var pre = d.getElementById('log');
     var last = 0;
