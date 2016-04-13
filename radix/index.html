@@ -1,0 +1,72 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>radix</title>
+
+<style>
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background: #F6F6F6;
+    height: 100%;
+    text-align: center;
+    font: 400 30px/1.5 'Source Code Pro', monospace;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrap {
+    display: inline-block;
+    padding: 20px;
+    background: #FFF;
+    text-align: right;
+}
+label {
+    position: relative;
+}
+span {
+    position: absolute;
+    top: -.09em;
+    right: .5em;
+    color: #666;
+}
+input {
+    width: 4em;
+    padding: 0 2em 0 .5em;
+    font: inherit;
+}
+</style>
+
+<div>
+<div class="wrap">
+    <label><span>rad</span><input type="number" id="rad"/></label>
+    <label><span>bit</span><input type="number" id="bit"/></label>
+    <label><span>len</span><input type="number" id="len" readonly/></label>
+</div>
+</div>
+
+<script>
+    document.body.addEventListener('input', calc, false);
+
+    function calc() {
+        var rad = document.getElementById('rad');
+        var bit = document.getElementById('bit');
+        var len = document.getElementById('len');
+
+
+        setInterval(function() {
+            var radValue = rad.value;
+            var bitValue = bit.value;
+            var lenValue = Math.ceil(bitValue / Math.log2(radValue));
+
+            if (lenValue) {
+                len.value = lenValue;
+            }
+        }, 100);
+    }
+</script>
