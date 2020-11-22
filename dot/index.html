@@ -1,4 +1,4 @@
-<!doctype html><meta charset=utf-8><title>vis</title>
+<!doctype html><meta charset=utf-8><title>DOT</title>
 <style type="text/css">
   body { display: flex; height: 100vh; margin: 0;}
   #network { flex: 1; background: #EEE; }
@@ -17,6 +17,7 @@ dinetwork {
 <script src="https://unpkg.com/vis-network@8.5.3/standalone/umd/vis-network.min.js"></script>
 <script type="text/javascript">
 window.onload = () => {
+  config.onfocus = () => { config.select() }
   config.oninput = () => { new vis.Network(network, vis.parseDOTNetwork(config.value)) }
   config.oninput();
 }
