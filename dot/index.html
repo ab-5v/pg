@@ -18,7 +18,12 @@ dinetwork {
 <script type="text/javascript">
 window.onload = () => {
   config.onfocus = () => { config.select() }
-  config.oninput = () => { new vis.Network(network, vis.parseDOTNetwork(config.value)) }
-  config.oninput();
+  config.oninput = () => {
+    location.hash = encodeURIComponent(config.value)
+    new vis.Network(network, vis.parseDOTNetwork(config.value))
+  }
+  var hash = location.hash.substring(1)
+  if (hash) config.value = decodeURIComponent(hash)
+  config.oninput()
 }
 </script>
