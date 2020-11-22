@@ -1,0 +1,23 @@
+<!doctype html><meta charset=utf-8><title>vis</title>
+<style type="text/css">
+  body { display: flex; height: 100vh; margin: 0;}
+  #network { flex: 1; background: #EEE; }
+  #config { width: 20%; max-width: 500px; margin: 10px; }
+</style>
+<div id="network"></div>
+<textarea id="config">
+dinetwork {
+  node[shape=circle];
+  1 -> 1 -> 2;
+  2 -> 3;
+  2 -- 4;
+  2 -> 1
+}
+</textarea>
+<script src="https://unpkg.com/vis-network@8.5.3/standalone/umd/vis-network.min.js"></script>
+<script type="text/javascript">
+window.onload = () => {
+  config.oninput = () => { new vis.Network(network, vis.parseDOTNetwork(config.value)) }
+  config.oninput();
+}
+</script>
